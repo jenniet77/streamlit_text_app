@@ -10,7 +10,7 @@ def run():
         r"""
         # :crystal_ball: Sentiment Analysis
         ## Basic app to detect the sentiment of text
-        <br>
+        
         """
     )
     st.text("")
