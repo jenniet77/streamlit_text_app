@@ -4,8 +4,8 @@ import joblib
 from utils import preprocessor
 
 def run():
-    model = pipe
-
+    model = joblib.load(open('model.joblib','rb'))
+    
     st.title("Sentiment Analysis")
     st.text("Basic app to detect the sentiment of text.")
     st.text("")
@@ -13,7 +13,7 @@ def run():
     st.text("")
     predicted_sentiment = ""
     if st.button("Predict"):
-        predicted_sentiment = pipe.predict(pd.Series(userinput))[0]
+        predicted_sentiment = model.predict(pd.Series(userinput))[0]
         if predicted_sentiment == 1:
             output = 'positive 👍'
         else:
